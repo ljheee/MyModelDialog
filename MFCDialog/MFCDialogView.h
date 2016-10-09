@@ -40,6 +40,10 @@ protected:
 // 生成的消息映射函数
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnFileSelectfile();
+	afx_msg void OnFileRect();
+	afx_msg void OnFileRectOther();
 };
 
 #ifndef _DEBUG  // MFCDialogView.cpp 中的调试版本

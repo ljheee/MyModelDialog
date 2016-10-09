@@ -3,6 +3,8 @@
 //
 
 #include "stdafx.h"
+#include "RectDialog.h"
+
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
@@ -26,6 +28,9 @@ BEGIN_MESSAGE_MAP(CMFCDialogView, CView)
 	ON_COMMAND(ID_FILE_PRINT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
+	ON_COMMAND(ID_FILE_SELECTFILE, &CMFCDialogView::OnFileSelectfile)
+	ON_COMMAND(ID_FILE_RECT, &CMFCDialogView::OnFileRect)
+	ON_COMMAND(ID_FILE_RECT_OTHER, &CMFCDialogView::OnFileRectOther)
 END_MESSAGE_MAP()
 
 // CMFCDialogView 构造/析构
@@ -102,3 +107,42 @@ CMFCDialogDoc* CMFCDialogView::GetDocument() const // 非调试版本是内联的
 
 
 // CMFCDialogView 消息处理程序
+
+//“选择文件”处理
+void CMFCDialogView::OnFileSelectfile()
+{
+	// TODO:  在此添加命令处理程序代码
+	CString filter;
+	filter = "文本文件(*.txt)|*.txt|C++文件(*.h,*.cpp)|*.h;*.cpp||";
+	CFileDialog dlg(TRUE,NULL ,NULL, OFN_HIDEREADONLY, filter);
+
+	if (dlg.DoModal() == IDOK){
+		CString str,fileName;
+		str = dlg.GetPathName();
+		fileName = dlg.GetFileName();
+
+		char filePath[] = "FilePath";
+		MessageBox(str);
+		MessageBox(fileName);
+	}
+
+
+}
+
+
+void CMFCDialogView::OnFileRect()
+{
+	// TODO:  在此添加命令处理程序代码
+	CRectDialog *dlg = new CRectDialog;
+	dlg->Create( IDD_DIALOG1);
+	dlg->ShowWindow(SW_NORMAL);
+
+}
+
+//另外一种方式
+void CMFCDialogView::OnFileRectOther()
+{
+	// TODO:  在此添加命令处理程序代码
+	CRectDialog dlg;
+	dlg.DoModal();
+}
