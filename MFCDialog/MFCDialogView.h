@@ -44,6 +44,7 @@ public:
 	afx_msg void OnFileSelectfile();
 	afx_msg void OnFileRect();
 	afx_msg void OnFileRectOther();
+//	afx_msg void OnIddDialog2();
 };
 
 #ifndef _DEBUG  // MFCDialogView.cpp 中的调试版本

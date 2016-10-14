@@ -143,6 +143,7 @@ BEGIN
         MENUITEM "SelectFile(&S)",              ID_FILE_SELECTFILE
         MENUITEM "Rect_jisuan",                 ID_FILE_RECT
         MENUITEM "Rect_otherFunction",          ID_FILE_RECT_OTHER
+        MENUITEM "DataExchange",                ID_FILE_DATAEXCHANGE
     END
 END
 
@@ -205,6 +206,22 @@ BEGIN
     PUSHBUTTON      "OtherFunction",IDC_BUTTON1,199,135,50,14
 END
 
+IDD_DIALOG2 DIALOGEX 0, 0, 309, 177
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog_DataExchange"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,156,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,156,50,14
+    LTEXT           "长：",IDC_STATIC,28,33,17,8
+    EDITTEXT        IDC_EDIT_WIDTH,48,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "宽：",IDC_STATIC,27,59,17,8
+    EDITTEXT        IDC_EDIT_HEIGHT,47,56,40,14,ES_AUTOHSCROLL
+    LTEXT           "面积：",IDC_STATIC,27,90,25,8
+    EDITTEXT        IDC_EDIT_AREA,47,87,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "计算",IDC_BUTTON_CAL,161,87,50,14
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -262,6 +279,14 @@ BEGIN
     END
 
     IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_DIALOG2, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 302

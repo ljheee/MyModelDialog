@@ -7,6 +7,7 @@
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
 #include "MFCDialog.h"
+#include "DataExchangeDlg.h"
 #endif
 
 #include "MFCDialogDoc.h"
@@ -22,6 +23,7 @@
 IMPLEMENT_DYNCREATE(CMFCDialogDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CMFCDialogDoc, CDocument)
+	ON_COMMAND(ID_FILE_DATAEXCHANGE, &CMFCDialogDoc::OnFileDataexchange)
 END_MESSAGE_MAP()
 
 
@@ -135,3 +137,12 @@ void CMFCDialogDoc::Dump(CDumpContext& dc) const
 
 
 // CMFCDialogDoc 命令
+
+
+void CMFCDialogDoc::OnFileDataexchange()
+{
+	// TODO:  在此添加命令处理程序代码
+	CDataExchangeDlg *dlg = new CDataExchangeDlg;
+	dlg->Create(IDD_DIALOG2);
+	dlg->ShowWindow(SW_NORMAL);
+}

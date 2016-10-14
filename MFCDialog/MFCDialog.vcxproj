@@ -101,6 +101,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataExchangeDlg.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MFCDialog.h" />
     <ClInclude Include="MFCDialogDoc.h" />
@@ -111,6 +112,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataExchangeDlg.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MFCDialog.cpp" />
     <ClCompile Include="MFCDialogDoc.cpp" />

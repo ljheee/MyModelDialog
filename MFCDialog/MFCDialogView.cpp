@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "RectDialog.h"
 
+
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
@@ -31,6 +32,7 @@ BEGIN_MESSAGE_MAP(CMFCDialogView, CView)
 	ON_COMMAND(ID_FILE_SELECTFILE, &CMFCDialogView::OnFileSelectfile)
 	ON_COMMAND(ID_FILE_RECT, &CMFCDialogView::OnFileRect)
 	ON_COMMAND(ID_FILE_RECT_OTHER, &CMFCDialogView::OnFileRectOther)
+//	ON_COMMAND(IDD_DIALOG2, &CMFCDialogView::OnIddDialog2)
 END_MESSAGE_MAP()
 
 // CMFCDialogView 构造/析构
@@ -146,3 +148,5 @@ void CMFCDialogView::OnFileRectOther()
 	CRectDialog dlg;
 	dlg.DoModal();
 }
+
+
